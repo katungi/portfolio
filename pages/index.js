@@ -1,5 +1,6 @@
 import Page from '../components/page';
 import Link from 'next/link';
+import { RoughNotation } from 'react-rough-notation';
 
 export default function Home() {
   return (
@@ -8,9 +9,12 @@ export default function Home() {
         <h1>Daniel Katungi Dennis</h1>
 
         <p>
-          software developer , Tech enthusiast, practicing minimalist.{' '}
+          <RoughNotation color='#a30000' type='highlight' show='true'>
+            software developer
+          </RoughNotation>
+          , Tech enthusiast, practicing minimalist.{' '}
           <Link underline href='/music'>
-            Also a music lover
+            I am a huuuuge music lover
           </Link>{' '}
           in search of flow.{' '}
           <Link underline href='/blog'>
@@ -19,18 +23,30 @@ export default function Home() {
           about javascript mostly
         </p>
 
+        {/* <p>
+          <RoughNotation color='#b2b1cf' type='circle' show='true'>
+            Hint: Press the Command Button
+          </RoughNotation>
+        </p> */}
+
         <p>
-          Making magic at ,{' '}
+          Making magic at{' '}
           <Link underline href='https://castify.ai' external>
-            Castify
-          </Link>
-          Writing stuff at{' '}
+            <RoughNotation color='#00afb5' type='underline' show='true'>
+              Castify
+            </RoughNotation>
+          </Link>{' '}
+          , Technically Writting at{' '}
           <Link underline href='https://section.io' external>
-            Section
+            <RoughNotation color='#ff7700' type='underline' show='true'>
+              Section
+            </RoughNotation>
           </Link>{' '}
           and making databases easy to use at{' '}
           <Link underline href='https://www.prisma.io/' external>
-            Prisma
+            <RoughNotation color='#5dfdcb' type='underline' show='true'>
+              Prisma
+            </RoughNotation>
           </Link>{' '}
         </p>
       </article>
