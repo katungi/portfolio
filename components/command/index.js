@@ -72,7 +72,10 @@ const CommandMenu = memo(() => {
         setOpen(true);
       },
       // Blog
-      'g b': () => router.push('/blog'),
+      'g b': () =>
+        router.push(
+          'https://www.section.io/engineering-education/authors/daniel-katungi/'
+        ),
       // Navigation
       'g h': () => router.push('/'),
       'g c': () => router.push('/contact'),
@@ -231,7 +234,7 @@ const DefaultItems = () => {
       />
       <Group title='Blog'>
         <Item value='Blog' icon={<Pencil />} keybind='g b' />
-        <Item
+        {/* <Item
           value='Search blog...'
           icon={<Search />}
           closeOnCallback={false}
@@ -241,7 +244,7 @@ const DefaultItems = () => {
           value='RSS'
           icon={<RSS />}
           callback={() => router.push('/feed.xml')}
-        />
+        /> */}
       </Group>
 
       <Group title='Collection'>
