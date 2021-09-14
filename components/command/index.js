@@ -31,13 +31,12 @@ import {
   ArrowRight,
   GitHub,
   Twitter,
-} from '@components/icons';
+} from '../icons/index';
 
 import styles from './command.module.css';
-import headerStyles from '@components/header/header.module.css';
+import headerStyles from '../header/header.module.css';
 import { useTheme } from 'next-themes';
-import tinykeys from '@lib/tinykeys';
-import postMeta from '@data/blog.json';
+import tinykeys from '../../lib/tinykeys.ts';
 
 const CommandData = React.createContext({});
 const useCommandData = () => React.useContext(CommandData);
@@ -204,20 +203,6 @@ const ThemeItems = () => {
   });
 };
 
-const BlogItems = () => {
-  const router = useRouter();
-
-  return postMeta.map((post, i) => {
-    return (
-      <Item
-        key={`blog-item-${post.title}-${i}`}
-        value={post.title}
-        callback={() => router.push('/blog/[slug]', `/blog/${post.slug}`)}
-      />
-    );
-  });
-};
-
 const Label = ({ title, values, search }) => {
   return (
     <div className={styles.label} aria-hidden>
@@ -262,14 +247,9 @@ const DefaultItems = () => {
       </Group>
 
       <Group title='Collection'>
-        <Item value='Reading' icon={<Book />} keybind='g r' />
-        <Item value='Design' icon={<Design />} keybind='g d' />
-        <Item value='Keyboards' icon={<M6 />} keybind='g k' />
+        <Item value='Videos' icon={<M6 />} keybind='g k' />
         <Item value='Music' icon={<Music />} keybind='g m' />
         <Item value='Projects' icon={<Document />} keybind='g p' />
-        <Item value='Quotes' icon={<Quote />} keybind='g q' />
-        <Item value='Words' icon={<Words />} keybind='g w' />
-        <Item value='Ideas' icon={<Lightbulb />} keybind='g i' />
       </Group>
 
       <Group title='Navigation'>
