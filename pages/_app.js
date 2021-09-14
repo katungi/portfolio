@@ -1,6 +1,7 @@
 import React from 'react';
 import Router from 'next/router';
-import '../styles/globals.css';
+import nprogress from 'nprogress';
+import debounce from 'lodash.debounce';
 
 const start = debounce(nprogress.start, 500);
 Router.events.on('routeChangeStart', start);

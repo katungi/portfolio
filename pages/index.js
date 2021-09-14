@@ -1,35 +1,41 @@
-import Head from 'next/head'
+import Head from 'next/head';
+import Page from '../components/page';
+import Link from 'next/link';
 
 export default function Home() {
   return (
-      <Page description="Hi, I'm Paco. Frontend developer and designer, mechanical keyboard enthusiast, practicing minimalist, and trance lover in search of flow.">
+    <Page description="Hi, I'm Katungi. Software developer and amazing human">
       <article>
-        <h1>Paco Coursey</h1>
+        <h1>Daniel Katungi Dennis</h1>
 
         <p>
-          Frontend developer and designer,{' '}
-          <Link underline href="/keyboards">
-            mechanical keyboard
-          </Link>{' '}
-          enthusiast, practicing minimalist, and{' '}
-          <Link underline href="/music">
-            trance lover
+          software developer and designer, Tech enthusiast, practicing
+          minimalist, and{' '}
+          <Link underline href='/music'>
+            music lover
           </Link>{' '}
           in search of flow.{' '}
-          <Link underline href="/blog">
+          <Link underline href='/blog'>
             Writing
           </Link>{' '}
-          about design and code.
+          about javascript mostly
         </p>
 
         <p>
-          Working with{' '}
-          <Link underline href="https://vercel.com" external>
-            ▲ Vercel
+          Making magic at{' '}
+          <Link underline href='https://castify.ai' external>
+            Castify
           </Link>{' '}
-          to build better ways to deploy websites.
+          Writing stuff at
+          <Link underline href='https://section.io' external>
+            Section
+          </Link>{' '}
+          and making databases easy to use at
+          <Link underline href='https://www.prisma.io/' external>
+            Prisma
+          </Link>{' '}
         </p>
       </article>
     </Page>
-  )
+  );
 }

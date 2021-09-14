@@ -1,3 +1,7 @@
+import Head from '../head';
+import Header from '../header/index';
+import styles from './page.module.css';
+
 const Page = ({
   header = true,
   footer = true,
