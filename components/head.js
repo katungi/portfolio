@@ -32,8 +32,8 @@ const Head = ({
       <meta name='og:description' content={description} />
 
       {/* Image */}
-      <meta name='twitter:image' content={image} />
-      <meta name='og:image' content={image} />
+      <meta name='twitter:image' content={defaultOgImage} />
+      <meta name='og:image' content={defaultOgImage} />
 
       {/* URL */}
       <meta name='og:url' content='https://katungi.vercel.app' />
