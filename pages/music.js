@@ -1,10 +1,12 @@
+import { useEffect, useState } from 'react';
 import Page from '../components/page';
 import Link from 'next/link';
 import { RoughNotation } from 'react-rough-notation';
-
 import { Music } from '../components/icons/index';
+import axios from 'axios';
+import Entry from '../components/entry';
 
-export default function MusicPage() {
+export default function MusicPage({ data }) {
   return (
     <Page description="Hi, I'm Katungi. Software developer and amazing human">
       <article>
@@ -23,23 +25,29 @@ export default function MusicPage() {
             Deezer playlist
           </Link>{' '}
         </p>
-
-        <p>
-          Still working on the page, but feel free to stalk my ,{' '}
-          <Link
-            underline
-            href='https://www.deezer.com/us/profile/3592873264/loved'
-            external
-          >
-            <a>
-              <Music />{' '}
-              <RoughNotation color='#a30000' type='highlight' show='true'>
-                Deezer playlist
-              </RoughNotation>
-            </a>
-          </Link>
-        </p>
+        {data.map((entry) => {
+          return (
+            <Entry
+              key={entry.id}
+              title={entry.title_short}
+              image={entry.album.cover_xl}
+              href={entry.link}
+              description={entry.artist.name}
+            />
+          );
+        })}
       </article>
     </Page>
   );
+}
+
+export async function getStaticProps(context) {
+  const data = await axios.get('https://api.deezer.com/playlist/9469384682');
+
+  console.log(data.data.tracks.data);
+  return {
+    props: {
+      data: data.data.tracks.data,
+    }, // will be passed to the page component as props
+  };
 }
