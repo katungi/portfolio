@@ -1,3 +1,5 @@
+import Page from '../components/page';
+
 const Contact = () => {
   return (
     <Page title='Contact' footer={false} description='Get in touch.'>
