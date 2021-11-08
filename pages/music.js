@@ -44,7 +44,6 @@ export default function MusicPage({ data }) {
 export async function getStaticProps(context) {
   const data = await axios.get('https://api.deezer.com/playlist/9469384682');
 
-  console.log(data.data.tracks.data);
   return {
     props: {
       data: data.data.tracks.data,

@@ -72,10 +72,7 @@ const CommandMenu = memo(() => {
         setOpen(true);
       },
       // Blog
-      'g b': () =>
-        router.push(
-          'https://www.section.io/engineering-education/authors/daniel-katungi/'
-        ),
+      'g b': () => router.push('/blog'),
       // Navigation
       'g h': () => router.push('/'),
       'g c': () => router.push('/contact'),
