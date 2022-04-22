@@ -251,7 +251,7 @@ const DefaultItems = () => {
       </Group>
 
       <Group title='Navigation'>
-        <Item value='Home' icon={<ArrowRight />} keybind='g h' />
+        <Item value='Home' icon={<ArrowRight />} />
         <Item value='Contact' icon={<ArrowRight />} keybind='g c' />
       </Group>
 
@@ -259,9 +259,17 @@ const DefaultItems = () => {
         <Item
           value='GitHub'
           icon={<GitHub />}
+          keybind='g h'
           callback={() => window.open('https://github.com/katungi', '_blank')}
         />
-        <Item value='Twitter' icon={<Twitter />} keybind='g t' />
+        <Item
+          value='Twitter'
+          icon={<Twitter />}
+          keybind='g t'
+          callback={() =>
+            window.open('https://twitter.com/WarriorRapid', '_blank')
+          }
+        />
       </Group>
     </>
   );
