@@ -85,7 +85,7 @@ export default function Home() {
         <blockquote>
           {' '}
           <p className='reset'>
-            Hint: Press the Command Button or CTRL + K to Get Started
+            Hint: Press the Command Button or ⌘K to Get Started
           </p>
         </blockquote>
       </article>
