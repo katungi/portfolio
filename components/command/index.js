@@ -51,13 +51,14 @@ const CommandMenu = memo(() => {
   const [pages, setPages] = usePages(commandProps, ThemeItems);
   const [open, setOpen] = useState(false);
   const { search, list } = commandProps;
-
+  const { theme: activeTheme, themes, setTheme } = useTheme();
   const { mounted, rendered } = useDelayedRender(open, {
     enterDelay: -1,
     exitDelay: 200,
   });
 
   useEffect(() => {
+    console.log('Found Themes', themes);
     if (!mounted) {
       setPages([DefaultItems]);
     }

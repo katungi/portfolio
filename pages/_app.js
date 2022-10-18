@@ -2,6 +2,7 @@ import React from 'react';
 import Router from 'next/router';
 import nprogress from 'nprogress';
 import debounce from 'lodash.debounce';
+import { ThemeProvider } from 'next-themes';
 import '../styles/globals.css';
 
 const start = debounce(nprogress.start, 500);
@@ -17,7 +18,11 @@ Router.events.on('routeChangeError', () => {
 });
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+  return (
+    <ThemeProvider>
+      <Component {...pageProps} />
+    </ThemeProvider>
+  );
 }
 
 export default MyApp;
