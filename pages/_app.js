@@ -3,6 +3,7 @@ import Router from 'next/router';
 import nprogress from 'nprogress';
 import debounce from 'lodash.debounce';
 import { ThemeProvider } from 'next-themes';
+import { Analytics} from '@vercel/analytics/react'
 import '../styles/globals.css';
 
 const start = debounce(nprogress.start, 500);
@@ -21,6 +22,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider>
       <Component {...pageProps} />
+      <Analytics/>
     </ThemeProvider>
   );
 }
