@@ -2,6 +2,8 @@
 @import './markdown.css';
 @import './nprogress.css';
 @import './inter.css';
+@import url('https://fonts.cdnfonts.com/css/dot-matrix');
+
 :root {
   /* Spacing */
   --gap-quarter: 0.25rem;
@@ -58,6 +60,7 @@
 
 * {
   box-sizing: border-box;
+  font-family: 'Dot Matrix' !important;
 }
 
 ::selection {
@@ -212,6 +215,7 @@ details {
     --name: #333;
     --highlight: #eaeaea;
   }
+
   * {
     text-shadow: none !important;
   }
