@@ -4,7 +4,9 @@ import ytdl from "ytdl-core"
 const sendSSE = (res, data) => {
   res.write(`data: ${JSON.stringify(data)}\n\n`);
 };
-const progressStore = {};
+const progressStore = {
+  progress: ''
+};
 
 export default async function handle(req, res) {
   if (req.method === 'POST') {
@@ -16,9 +18,7 @@ export default async function handle(req, res) {
       video.pipe(res)
       video.on('progress', (chunkLength, downloaded, total) => {
         const percent = downloaded / total * 100;
-
-        // Update the global progress store
-        progressStore[videoURL] = `${percent.toFixed(2)}%`;
+        progressStore['progress'] = `${percent.toFixed(2)}%`;
         // console.log(progressStore[videoURL])
       })
 
@@ -35,7 +35,7 @@ export default async function handle(req, res) {
 
     // Example data you'd send (replace with your progress tracking)
 
-    sendSSE(res, { progress: progressStore[req.query.url] || '0%' });
+    sendSSE(res, { progress: progressStore.progress });
 
   } else {
     res.status(405).send("Method Not Allowed");

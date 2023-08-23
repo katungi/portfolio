@@ -1,10 +1,13 @@
 import Page from '../components/page';
 import headerStyles from '../components/header/header.module.css';
 import axios from 'axios';
+import { useState } from 'react';
 
 export default function Videos() {
+  const [executing, setExecuting] = useState(false)
 
   async function downloadFromURL() {
+    setExecuting(true)
     const url = document.getElementById('url').value;
     const quality = '360p';
     const payload = { url, quality };
@@ -14,15 +17,10 @@ export default function Videos() {
     console.log(sse)
     sse.onopen = () => console.log('SSE connection opened.');
     sse.onerror = () => console.log('Error occurred on SSE connection.');
-    // sse.onmessage = (event) => {
-    //   console.log("receiving data:::", event.data)
-    //   // const data = JSON.parse(event.data);
-    //   // console.log(data.progress)
-    //   // window.document.getElementById('progress').innerHTML = data.progress;
-    // };
-
     sse.addEventListener('progress', (event) => {
       console.log("receiving data:::", event)
+      const data = JSON.parse(event.data);
+      window.document.getElementById('progress').innerHTML = data.progress;
     }, { once: false, capture: false });
 
     // Then, initiate the video download
@@ -33,6 +31,7 @@ export default function Videos() {
     link.href = window.URL.createObjectURL(blob);
     link.download = 'video.mp4';
     link.click();
+    setExecuting(false)
   }
 
 
@@ -56,7 +55,7 @@ export default function Videos() {
         >Download</button>
       </article>
       <div id=''>
-        <h3 id='progress'></h3>
+        {executing && <p>Downloading ...</p>}
       </div>
     </Page >
   );
