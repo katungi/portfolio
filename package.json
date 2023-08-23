@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "version": "0.1.0",
+  "version": "0.1.4",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -11,6 +11,7 @@
     "@reach/dialog": "^0.16.0",
     "@vercel/analytics": "^0.1.1",
     "axios": "^0.21.4",
+    "browserlist": "^1.0.1",
     "classnames": "^2.3.1",
     "cmdk": "^0.0.4",
     "lodash.debounce": "^4.0.8",
@@ -22,6 +23,7 @@
     "react-intersection-observer": "^8.32.1",
     "react-rough-notation": "^1.0.1",
     "sitemap": "^7.1.1",
-    "use-delayed-render": "^0.0.7"
+    "use-delayed-render": "^0.0.7",
+    "ytdl-core": "^4.11.5"
   }
 }
