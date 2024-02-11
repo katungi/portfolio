@@ -20,7 +20,7 @@ export default function Home() {
 
         <p>
           {' '}
-          I am currently getting my hands dirty with a lot of framework stuff. Here are some of the things I am working on:
+          I am currently getting my hands dirty with a lot of framework stuff. Here are some of the things I am working on: {' '}
           <Link
             underline
             href='https://urban-js.dankat.io/'
