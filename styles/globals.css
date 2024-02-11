@@ -2,7 +2,6 @@
 @import './markdown.css';
 @import './nprogress.css';
 @import './inter.css';
-@import url('https://fonts.cdnfonts.com/css/dot-matrix');
 
 :root {
   /* Spacing */
@@ -60,7 +59,7 @@
 
 * {
   box-sizing: border-box;
-  font-family: 'Dot Matrix' !important;
+  /* font-family: 'Dot Matrix' !important; */
   font-weight: bold !important;
 }
 

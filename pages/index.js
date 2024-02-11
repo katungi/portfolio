@@ -14,26 +14,8 @@ export default function Home() {
           </RoughNotation>
           <p>
             {' '}
-            Backend / Cloud Developer for most part (Node, React). Typescript
-            Nerd, Flutter and Rust once in a while.
+            I tinker with React (Next.js), Node.js, TypeScript . I also write React Native, GO and a bit of Rust.{' '}
           </p>
-          {/* <Link underline href='/projects'>
-            <p>
-              {' '}
-              You can check some of the cool/weird/boring stuff i've been doing
-              lately. 😂😂 {'  '}
-            </p>
-          </Link>
-          <Link underline href='/music'>
-            <p>
-              {' '}
-              You can check out what music 🎶 I am listening to (It's
-              semi-realtime).{' '}
-            </p>
-          </Link>{' '}
-          <Link underline href='/blog'>
-            I write technical articles sometimes. Check out my articles!
-          </Link>{' '} */}
         </p>
 
         <p>
@@ -46,18 +28,11 @@ export default function Home() {
             target='_blank'
           >
             <RoughNotation color='#ff7700' type='underline' show='true'>
-              Tellan Tech 🤖
+              Jumba
             </RoughNotation>
           </Link>{' '}
         </p>
-        <p>
-          Trying to build a startup with my friends at{' '}
-          <Link underline href='https://herzina.io' external target='_blank'>
-            <RoughNotation color='#ff7700' type='underline' show='true'>
-              Herzina 🤞
-            </RoughNotation>
-          </Link>{' '}
-        </p>
+
         <p>
           Technical Writer at{' '}
           <Link underline href='https://section.io' external target='_blank'>
@@ -77,7 +52,6 @@ export default function Home() {
             </RoughNotation>
           </Link>{' '}
         </p>
-
         <p>
           Now that we are friends 👀, you have my permission to roam around 👻
         </p>
