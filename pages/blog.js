@@ -7,7 +7,8 @@ import Page from '../components/page';
 export default function Blog() {
   return (
     <Page description="Hi, I'm Katungi. Software developer and amazing human">
-      <article>Blog</article>
+      <article>Blogs</article>
+      <article>Blogs are temporarily down for migration :-( Coming soon.</article>
     </Page>
   )
 }
