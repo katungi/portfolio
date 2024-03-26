@@ -33,7 +33,7 @@ export default function Home() {
           </Link>{' '}
         </p>
 
-        <p>
+        {/* <p>
           {' '}
           Full-stack Developer at{' '}
           <Link
@@ -46,7 +46,7 @@ export default function Home() {
               Jumba
             </RoughNotation>
           </Link>{' '}
-        </p>
+        </p> */}
 
         <p>
           Technical Writer at{' '}
