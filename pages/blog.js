@@ -1,54 +1,46 @@
-// import { useEffect } from 'react';
 import Page from '../components/page';
-// import Entry from '../components/entry';
-// import { RoughNotation } from 'react-rough-notation';
-// import axios from 'axios';
+import { getSortedPostsData } from '../lib/blog-parser';
+import { RoughNotation } from 'react-rough-notation';
+import Entry from '../components/entry';
 
-export default function Blog() {
+export default function Blog({ result }) {
+  console.log(result)
   return (
     <Page description="Hi, I'm Katungi. Software developer and amazing human">
-      <article>Blogs</article>
-      <article>Blogs are temporarily down for migration :-( Coming soon.</article>
+      <article>
+        <h1>Blog</h1>
+
+        <p>
+          This is a curated list of Blog articles 📓{' '}
+          <RoughNotation color='#5dfdcb' type='underline' show='true'>
+            I have written{' '}
+          </RoughNotation>
+          here and there 💬
+        </p>
+        {result.map((entry) => {
+          console.log(entry)
+          return (
+            <Entry
+              key={entry.id}
+              title={entry.title}
+              // image={entry.image[0].url}
+              // href={entry.link[0]}
+              description={entry.url}
+            />
+          );
+        })}
+      </article>
     </Page>
-  )
+  );
 }
-// export default function Blog({ data }) {
-//   return (
-//     <Page description="Hi, I'm Katungi. Software developer and amazing human">
-//       <article>
-//         <h1>Blog</h1>
 
-//         <p>
-//           This is a curated list of Blog articles 📓{' '}
-//           <RoughNotation color='#5dfdcb' type='underline' show='true'>
-//             I have written{' '}
-//           </RoughNotation>
-//           here and there 💬
-//         </p>
-//         {/* {data.map((entry) => {
-//           return (
-//             <Entry
-//               key={entry.id}
-//               title={entry.title}
-//               image={entry.image[0]}
-//               href={entry.link[0]}
-//               description={entry.description[0]}
-//             />
-//           );
-//         })} */}
-//       </article>
-//     </Page>
-//   );
-// }
+export async function getStaticProps(context) {
+  const result = await getSortedPostsData();
 
-// export async function getStaticProps(context) {
-//   const result = await axios.get(
-//     'https://section-author-feeds.louisefindlay.com/feed/author/daniel-katungi'
-//   );
-
-//   return {
-//     props: {
-//       data: result.data,
-//     }, // will be passed to the page component as props
-//   };
-// }
+  // console.log("Server Result",result)
+  return {
+    props: {
+      result
+    },
+  };
+}
