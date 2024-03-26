@@ -10,7 +10,7 @@ date: 2021-07-12T00:00:00-14:30
 topics: [Node.js, API]
 excerpt_separator: <!--more-->
 images:
-  - url: /engineering-education/api-with-prisma-and-nodejs/hero.png
+  - url: /articles/api-with-prisma-and-nodejs/hero.png
     alt: API With Prisma and Node.js image
 ---
 Most modern day applications make use of databases mainly to store data. In many modern backend architectures, we model everything else around the data and its manipulation.
