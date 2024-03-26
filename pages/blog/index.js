@@ -1,7 +1,7 @@
-import Page from '../components/page';
-import { getSortedPostsData } from '../lib/blog-parser';
+import Page from '../../components/page';
+import { getSortedPostsData } from '../../lib/blog-parser';
 import { RoughNotation } from 'react-rough-notation';
-import Entry from '../components/entry';
+import Entry from '../../components/entry';
 
 export default function Blog({ result }) {
   console.log(result)
@@ -18,13 +18,13 @@ export default function Blog({ result }) {
           here and there 💬
         </p>
         {result.map((entry) => {
-          console.log(entry)
+          const href = `/blog/${entry.id}`;
           return (
             <Entry
               key={entry.id}
               title={entry.title}
               // image={entry.image[0].url}
-              // href={entry.link[0]}
+              href={href}
               description={entry.url}
             />
           );

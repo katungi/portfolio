@@ -1,4 +1,7 @@
 module.exports = {
+  experiments: { 
+    topLevelAwait: true 
+  },
   async rewrites() {
     return [
       {
@@ -11,4 +14,4 @@ module.exports = {
       },
     ];
   },
-};
+}
